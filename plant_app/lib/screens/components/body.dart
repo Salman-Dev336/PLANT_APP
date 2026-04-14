@@ -15,9 +15,22 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           HeaderWithSearchBox(size: size),
+          Container(
+            height: 24,
+            child: Stack(
+              children: [
+                Text(
+                  "Recommended",
+                  style: TextStyle(
+                    fontSize: 20,
+                    // color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
