@@ -17,10 +17,28 @@ class Body extends StatelessWidget {
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: 'Recommended', press:(){}),
           Container(
+            margin: EdgeInsets.only(
+              left: kDefaultPadding,
+              top: kDefaultPadding/2,
+              bottom: kDefaultPadding * 2.5,
+            ),
             width: size.width*0.4,
             child: Column(
               children: [
                 Image.asset('assets/images/image_1.png'),
+                Container(
+                  padding: EdgeInsets.all(kDefaultPadding /2),
+                  decoration: BoxDecoration(
+                    color:Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 10),
+                        blurRadius: 50,
+                        color: kPrimaryColor.withOpacity(0.35),
+                      ),
+                    ]
+                  ),
+                )
               ],
             ),
           ),
