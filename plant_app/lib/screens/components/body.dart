@@ -16,7 +16,37 @@ class Body extends StatelessWidget {
         children: [
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: 'Recommended', press: () {}),
-          RecommendPlantCard(size: size),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                RecommendPlantCard(
+                  image: 'assets/images/image_1.png',
+                  title: 'Samantha',
+                  country: 'Russia',
+                  price: 500,
+                  press: (){},
+                  // size: size
+                ),
+                    RecommendPlantCard(
+                  image: 'assets/images/image_1.png',
+                  title: 'Samantha',
+                  country: 'Russia',
+                  price: 500,
+                  press: (){},
+                  // size: size
+                ),
+                    RecommendPlantCard(
+                  image: 'assets/images/image_1.png',
+                  title: 'Samantha',
+                  country: 'Russia',
+                  price: 500,
+                  press: (){},
+                  // size: size
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -26,13 +56,24 @@ class Body extends StatelessWidget {
 class RecommendPlantCard extends StatelessWidget {
   const RecommendPlantCard({
     super.key,
-    required this.size,
+    required this.image,
+    required this.title,
+    required this.country,
+    required this.price,
+    required this.press,
+
+    // required this.size,
   });
 
-  final Size size;
+  final String image, title, country;
+  final int price;
+  final Function press;
+
+  // final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(
         left: kDefaultPadding,
@@ -42,48 +83,57 @@ class RecommendPlantCard extends StatelessWidget {
       width: size.width * 0.35,
       child: Column(
         children: [
-          Image.asset('assets/images/image_1.png'),
-          Container(
-            padding: EdgeInsets.all(kDefaultPadding / 2),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 10),
-                  blurRadius: 50,
-                  color: kPrimaryColor.withOpacity(0.35),
+          Image.asset(image),
+          GestureDetector(
+            onTap: press(),
+            child: Container(
+              padding: EdgeInsets.all(kDefaultPadding / 2),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(10),
+                  bottomRight: Radius.circular(10),
                 ),
-              ],
-            ),
-            child: Row(
-              children: [RichText(text: TextSpan(children: [
-                TextSpan(text: "Samantha\n",
-                style:
-                 Theme.of(context).textTheme.labelLarge!.copyWith(
-                  // color: kPrimaryColor,
-                  fontWeight: FontWeight.bold,
-                    ),
-                ),
-                TextSpan(
-                  text: "Russia",
-                  style: TextStyle(
-                    color: kPrimaryColor.withOpacity(0.9),
-                  )
-                ),
-                  ],
-                ),
-                ),
-                Spacer(),
-                Text("\$500",
-                style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.bold,
-                ),)
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 10),
+                    blurRadius: 50,
+                    color: kPrimaryColor.withOpacity(0.35),
+                  ),
                 ],
+              ),
+              child: Row(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "$title\n",
+                          style: Theme.of(context).textTheme.labelLarge!
+                              .copyWith(
+                                // color: kPrimaryColor,
+                                fontWeight: FontWeight.bold,
+                              ),
+                        ),
+                        TextSpan(
+                          text: "$country",
+                          style: TextStyle(
+                            color: kPrimaryColor.withOpacity(0.9),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Text(
+                    "\$$price",
+                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      color: kPrimaryColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],
