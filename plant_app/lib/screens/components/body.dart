@@ -15,31 +15,75 @@ class Body extends StatelessWidget {
       child: Column(
         children: [
           HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(title: 'Recommended', press:(){}),
+          TitleWithMoreBtn(title: 'Recommended', press: () {}),
+          RecommendPlantCard(size: size),
+        ],
+      ),
+    );
+  }
+}
+
+class RecommendPlantCard extends StatelessWidget {
+  const RecommendPlantCard({
+    super.key,
+    required this.size,
+  });
+
+  final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(
+        left: kDefaultPadding,
+        top: kDefaultPadding / 2,
+        bottom: kDefaultPadding * 2.5,
+      ),
+      width: size.width * 0.35,
+      child: Column(
+        children: [
+          Image.asset('assets/images/image_1.png'),
           Container(
-            margin: EdgeInsets.only(
-              left: kDefaultPadding,
-              top: kDefaultPadding/2,
-              bottom: kDefaultPadding * 2.5,
-            ),
-            width: size.width*0.4,
-            child: Column(
-              children: [
-                Image.asset('assets/images/image_1.png'),
-                Container(
-                  padding: EdgeInsets.all(kDefaultPadding /2),
-                  decoration: BoxDecoration(
-                    color:Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0, 10),
-                        blurRadius: 50,
-                        color: kPrimaryColor.withOpacity(0.35),
-                      ),
-                    ]
-                  ),
-                )
+            padding: EdgeInsets.all(kDefaultPadding / 2),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  offset: Offset(0, 10),
+                  blurRadius: 50,
+                  color: kPrimaryColor.withOpacity(0.35),
+                ),
               ],
+            ),
+            child: Row(
+              children: [RichText(text: TextSpan(children: [
+                TextSpan(text: "Samantha\n",
+                style:
+                 Theme.of(context).textTheme.labelLarge!.copyWith(
+                  // color: kPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                    ),
+                ),
+                TextSpan(
+                  text: "Russia",
+                  style: TextStyle(
+                    color: kPrimaryColor.withOpacity(0.9),
+                  )
+                ),
+                  ],
+                ),
+                ),
+                Spacer(),
+                Text("\$500",
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                  color: kPrimaryColor,
+                  fontWeight: FontWeight.bold,
+                ),)
+                ],
             ),
           ),
         ],
@@ -47,5 +91,3 @@ class Body extends StatelessWidget {
     );
   }
 }
-
-
