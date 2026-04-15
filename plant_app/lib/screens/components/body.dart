@@ -25,23 +25,23 @@ class Body extends StatelessWidget {
                   title: 'Samantha',
                   country: 'Russia',
                   price: 500,
-                  press: (){},
+                  press: () {},
                   // size: size
                 ),
-                    RecommendPlantCard(
+                RecommendPlantCard(
                   image: 'assets/images/image_1.png',
                   title: 'Samantha',
                   country: 'Russia',
                   price: 500,
-                  press: (){},
+                  press: () {},
                   // size: size
                 ),
-                    RecommendPlantCard(
+                RecommendPlantCard(
                   image: 'assets/images/image_1.png',
                   title: 'Samantha',
                   country: 'Russia',
                   price: 500,
-                  press: (){},
+                  press: () {},
                   // size: size
                 ),
               ],
