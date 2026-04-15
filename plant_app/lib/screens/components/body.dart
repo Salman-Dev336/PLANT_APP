@@ -1,8 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/components/header_with_search_box.dart';
 
 class Body extends StatelessWidget {
