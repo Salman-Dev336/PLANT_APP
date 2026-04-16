@@ -12,6 +12,12 @@ class HomeScreen extends StatelessWidget {
       appBar: buildAppBar(),
       body: Body(),
       bottomNavigationBar: Container(
+        padding: EdgeInsets.only(
+          left: kDefaultPadding*2,
+          right: kDefaultPadding*2,
+          bottom: kDefaultPadding,
+          top: kDefaultPadding/2,
+        ),
         height: 80,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -22,6 +28,23 @@ class HomeScreen extends StatelessWidget {
               color: kPrimaryColor.withOpacity(0.38),
             )
           ]
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children:[
+            IconButton(
+              icon: SvgPicture.asset('assets/icons/flower.svg'),
+              onPressed: (){}, 
+              ),
+                IconButton(
+              icon: SvgPicture.asset('assets/icons/heart-icon.svg'),
+              onPressed: (){}, 
+              ),
+                IconButton(
+              icon: SvgPicture.asset('assets/icons/user-icon.svg'),
+              onPressed: (){}, 
+              ),
+          ],
         ),
       ),
     );
