@@ -116,7 +116,7 @@ class RecommendPlantCard extends StatelessWidget {
                               ),
                         ),
                         TextSpan(
-                          text: "$country",
+                          text: country,
                           style: TextStyle(
                             color: kPrimaryColor.withOpacity(0.9),
                           ),
