@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screens/details/components/body.dart';
 
 
 class RecommendsPlants extends StatelessWidget {
@@ -18,7 +19,10 @@ class RecommendsPlants extends StatelessWidget {
             title: 'Samantha',
             country: 'Russia',
             price: 500,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DetailScreen()),);
+            },
             // size: size
           ),
           RecommendPlantCard(
@@ -26,7 +30,10 @@ class RecommendsPlants extends StatelessWidget {
             title: 'Angelica',
             country: 'Pakistan',
             price: 500,
-            press: () {},
+            press: () {
+               Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DetailScreen()),);
+            },
             // size: size
           ),
           RecommendPlantCard(
@@ -34,7 +41,10 @@ class RecommendsPlants extends StatelessWidget {
             title: 'Rose',
             country: 'Afghanistan',
             price: 500,
-            press: () {},
+            press: () {
+               Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DetailScreen()),);
+            },
             // size: size
           ),
         ],
