@@ -36,10 +36,11 @@ class HeaderWithSearchBox extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Text('Hi Uishopy!',
+                Text('Let’s Grow Together',
                 style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
+                  fontFamily: 'times new roman',
                 ),
                 ),
                 Spacer(),
