@@ -19,7 +19,11 @@ class Body extends StatelessWidget {
           TitleWithMoreBtn(title: 'Recommended', press: () {}),
           RecommendsPlants(),
           TitleWithMoreBtn(title: 'Featured Plants', press: () {}),
-          FeaturedPlantCard(size: size, image: '', press: null,)
+          FeaturedPlantCard(
+            image: 'assets/images/bottom_img_1.png',
+            press: () {},
+            // size: size
+          )
         ],
       ),
     );
@@ -40,6 +44,9 @@ class FeaturedPlantCard extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
+      onTap: (){
+        press();
+      },
       child: Container(
         margin: EdgeInsets.only(
           left: kDefaultPadding,
