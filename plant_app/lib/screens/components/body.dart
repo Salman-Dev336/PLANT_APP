@@ -29,17 +29,17 @@ class Body extends StatelessWidget {
                   // size: size
                 ),
                 RecommendPlantCard(
-                  image: 'assets/images/image_1.png',
-                  title: 'Samantha',
-                  country: 'Russia',
+                  image: 'assets/images/image_2.png',
+                  title: 'Angelica',
+                  country: 'Pakistan',
                   price: 500,
                   press: () {},
                   // size: size
                 ),
                 RecommendPlantCard(
-                  image: 'assets/images/image_1.png',
-                  title: 'Samantha',
-                  country: 'Russia',
+                  image: 'assets/images/image_3.png',
+                  title: 'Rose',
+                  country: 'Afghanistan',
                   price: 500,
                   press: () {},
                   // size: size
