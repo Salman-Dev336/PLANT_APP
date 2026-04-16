@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace
+// ignore_for_file: unused_import, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
@@ -18,10 +18,43 @@ class Body extends StatelessWidget {
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: 'Recommended', press: () {}),
           RecommendsPlants(),
+          TitleWithMoreBtn(title: 'Featured Plants', press: () {}),
+          FeaturedPlantCard(size: size, image: '', press: null,)
         ],
       ),
     );
   }
 }
 
+class FeaturedPlantCard extends StatelessWidget {
+  const FeaturedPlantCard({
+    super.key, required this.image, required this.press,
+    // required this.size,
+  });
+  final String image;
+  final Function press;
 
+  // final Size size;
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return GestureDetector(
+      child: Container(
+        margin: EdgeInsets.only(
+          left: kDefaultPadding,
+          top: kDefaultPadding/2,
+          bottom: kDefaultPadding/2,
+        ),
+        width: size.width*0.8,
+        height: 185,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(
+            image: AssetImage(image),),
+          
+        ),
+      ),
+    );
+  }
+}
