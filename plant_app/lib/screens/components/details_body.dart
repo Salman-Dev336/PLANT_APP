@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screens/components/icon_card.dart';
 
 class DetailsBody extends StatelessWidget {
   const DetailsBody({super.key});
@@ -33,6 +34,11 @@ class DetailsBody extends StatelessWidget {
                           icon: SvgPicture.asset('assets/icons/back_arrow.svg'),
                         ),
                       ),
+                      Spacer(),
+                      IconCard(icon: 'assets/icons/sun.svg'),
+                      IconCard(icon: 'assets/icons/icon_2.svg'),
+                      IconCard(icon: 'assets/icons/icon_3.svg'),
+                      IconCard(icon: 'assets/icons/icon_4.svg'),
                     ],
                   ),
                 ),
@@ -67,3 +73,4 @@ class DetailsBody extends StatelessWidget {
     );
   }
 }
+
