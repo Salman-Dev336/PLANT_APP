@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/components/icon_card.dart';
 import 'package:plant_app/screens/components/image_and_icons.dart';
+import 'package:plant_app/screens/components/title_and_price.dart';
 
 class DetailsBody extends StatelessWidget {
   const DetailsBody({super.key});
@@ -20,52 +21,52 @@ class DetailsBody extends StatelessWidget {
             country: 'Russia',
             price: 600,
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class TitleAndPrice extends StatelessWidget {
-  const TitleAndPrice({
-    super.key, required this.title, required this.country, required this.price,
-  });
-   final String title, country;
-   final int price;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding ),
-      child: Row(
-        children: [
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: '$title\n',
-                  style: Theme.of(context).textTheme.headlineLarge
-                      ?.copyWith(
-                        color: kTextColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                TextSpan(
-                  text: country,
-                  style: TextStyle(fontSize: 20, color: kPrimaryColor, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
+          SizedBox(
+            height: kDefaultPadding,
           ),
-          Spacer(),
-          Text('\$$price', style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-            color: kPrimaryColor,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'times new roman',
-    
-          ),)
+          Row(
+            children: [
+              SizedBox(
+                width: size.width /2,
+                height: 84,
+                child: FloatingActionButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                    ),
+                  ),
+                  backgroundColor: kPrimaryColor,
+                  onPressed: (){},
+                  child: Text('Buy Now',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'times new roman',
+                  ),),
+                  ),
+              ),
+              Expanded(
+                child: FloatingActionButton(
+                  onPressed: (){},
+                  child: Text('Description',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'times new roman',
+                
+                  ),),),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: kDefaultPadding * 2,
+          )
         ],
       ),
     );
   }
 }
+
+
