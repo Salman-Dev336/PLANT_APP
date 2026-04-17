@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/components/details_body.dart';
-import 'package:plant_app/screens/components/details_screen.dart';
+// import 'package:plant_app/screens/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 
@@ -26,7 +26,7 @@ class RecommendsPlants extends StatelessWidget {
             price: 500,
             press: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailsScreen()),);
+                context, MaterialPageRoute(builder: (context) => DetailsBody()),);
             },
             // size: size
           ),
@@ -37,7 +37,7 @@ class RecommendsPlants extends StatelessWidget {
             price: 500,
             press: () {
                Navigator.push(
-                context, MaterialPageRoute(builder: (context) =>DetailsScreen()),);
+                context, MaterialPageRoute(builder: (context) =>DetailsBody()),);
             },
             // size: size
           ),
@@ -48,7 +48,7 @@ class RecommendsPlants extends StatelessWidget {
             price: 500,
             press: () {
                Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailsScreen()),);
+                context, MaterialPageRoute(builder: (context) => DetailsBody()),);
             },
             // size: size
           ),
