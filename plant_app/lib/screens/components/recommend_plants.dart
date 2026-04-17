@@ -7,11 +7,8 @@ import 'package:plant_app/screens/components/details_body.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 
-
 class RecommendsPlants extends StatelessWidget {
-  const RecommendsPlants({
-    super.key,
-  });
+  const RecommendsPlants({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +23,11 @@ class RecommendsPlants extends StatelessWidget {
             price: 500,
             press: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailsBody()),);
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsBody(),
+                ),
+              );
             },
             // size: size
           ),
@@ -35,10 +36,7 @@ class RecommendsPlants extends StatelessWidget {
             title: 'Angelica',
             country: 'Pakistan',
             price: 500,
-            press: () {
-               Navigator.push(
-                context, MaterialPageRoute(builder: (context) =>DetailsBody()),);
-            },
+            press: () {},
             // size: size
           ),
           RecommendPlantCard(
@@ -46,10 +44,7 @@ class RecommendsPlants extends StatelessWidget {
             title: 'Rose',
             country: 'Afghanistan',
             price: 500,
-            press: () {
-               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailsBody()),);
-            },
+            press: () {},
             // size: size
           ),
         ],
