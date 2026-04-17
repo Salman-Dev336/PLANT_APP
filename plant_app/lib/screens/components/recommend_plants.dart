@@ -1,6 +1,9 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/components/details_body.dart';
+import 'package:plant_app/screens/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 
@@ -23,7 +26,7 @@ class RecommendsPlants extends StatelessWidget {
             price: 500,
             press: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => DetailsBody()),);
+                context, MaterialPageRoute(builder: (context) => DetailsScreen()),);
             },
             // size: size
           ),
@@ -33,8 +36,8 @@ class RecommendsPlants extends StatelessWidget {
             country: 'Pakistan',
             price: 500,
             press: () {
-              //  Navigator.push(
-              //   context, MaterialPageRoute(builder: (context) =>DetailsBody()),);
+               Navigator.push(
+                context, MaterialPageRoute(builder: (context) =>DetailsScreen()),);
             },
             // size: size
           ),
@@ -44,8 +47,8 @@ class RecommendsPlants extends StatelessWidget {
             country: 'Afghanistan',
             price: 500,
             press: () {
-              //  Navigator.push(
-              //   context, MaterialPageRoute(builder: (context) => DetailsScreen()),);
+               Navigator.push(
+                context, MaterialPageRoute(builder: (context) => DetailsScreen()),);
             },
             // size: size
           ),
