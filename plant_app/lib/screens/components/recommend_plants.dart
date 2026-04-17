@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
 import 'package:plant_app/screens/components/details_body.dart';
+import 'package:plant_app/screens/components/details_screen.dart';
 // import 'package:plant_app/screens/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
 // import 'package:plant_app/screens/details/components/details_screen.dart';
@@ -22,12 +23,12 @@ class RecommendsPlants extends StatelessWidget {
             country: 'Russia',
             price: 500,
             press: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailsBody(),
-                ),
-              );
+              Future.delayed(Duration.zero, () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DetailsScreen()),
+                );
+              });
             },
             // size: size
           ),
